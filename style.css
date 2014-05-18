@@ -1,0 +1,29 @@
+html {
+  background-color: #052336;
+  background-color: #242021;
+  background-image: url('bgs/concrete_wall.png');
+}
+blockquote {
+  font-size: 7vmax;
+  font-family: 'IM Fell DW Pica', serif;
+  /*position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto;
+  width: 70%;
+  height: 50%;*/
+  text-align: center;
+  color: #F73445;
+  color: #FD6E32;
+}
+p {
+  margin: 0 0 1em 0;
+  line-height: 7vmax;
+}
+em {
+  font-style: italic;
+  color: #FCFAD7;
+  color: #F9ECD9;
+}
+footer {
+  font-family: 'IM Fell DW Pica SC', serif;
+  font-size: 3.5vmax;
+  text-transform: lowercase;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "quotes",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dubbs/quotes",
+  "authors": [
+    "Kevin Warrington <kevin.warrington@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-touchswipe": "~1.6.4",
+    "modernizr": "~2.8.1",
+    "jquery": "~2.1.1"
+  }
+}
