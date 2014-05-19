@@ -51,13 +51,13 @@ var $current = $nodes.first();
 if (Modernizr.touch) {
   $("#pt-main").swipe({
     swipeLeft:function() {
-      TweenLite.fromTo($current[0], 1, {left: 0, ease: Power2.easeInOut}, {left: '-100%', ease: Power2.easeInOut});
-      TweenLite.fromTo($current[0].nextNode, 1, {left: '100%', ease: Power2.easeInOut}, {left: 0, ease: Power2.easeInOut});
+      TweenLite.fromTo($current[0], .5, {left: 0}, {left: '-100%', ease: Power2.easeOut});
+      TweenLite.fromTo($current[0].nextNode, .5, {left: '100%'}, {left: 0, ease: Power2.easeOut});
       $current = $current[0].nextNode;
     },
     swipeRight:function() {
-      TweenLite.fromTo($current[0], 1, {left: 0, ease: Power2.easeInOut}, {left: '100%', ease: Power2.easeInOut});
-      TweenLite.fromTo($current[0].prevNode, 1, {left: '-100%', ease: Power2.easeInOut}, {left: 0, ease: Power2.easeInOut});
+      TweenLite.fromTo($current[0], .5, {left: 0}, {left: '100%', ease: Power2.easeOut});
+      TweenLite.fromTo($current[0].prevNode, .5, {left: '-100%'}, {left: 0, ease: Power2.easeOut});
       $current = $current[0].prevNode;
     },
     threshold: 10
