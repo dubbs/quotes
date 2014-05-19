@@ -9,8 +9,7 @@
   <script src="modernizr.js"></script>
 </head>
 <body>
-
-  <div id="pt-main" class="pt-perspective">
+  <div id="main">
     <div class="pt-page pt-page-1" style="left:0">
       <blockquote>
         <p>don't cry because it's over, <em>smile</em> because it happened</p>
@@ -19,18 +18,173 @@
     </div>
     <div class="pt-page pt-page-2">
       <blockquote>
-        <p>don't cry because it's over, <em>smile</em> because it happened</p>
-        <footer>Dr. Seuss</footer>
+        <p>if you tell the <em>truth</em>, you don't have to remember anything.</p>
+        <footer>Mark Twain</footer>
       </blockquote>
     </div>
- </div>
+    <div class="pt-page pt-page-3">
+      <blockquote>
+        <p><em>be yourself</em>, everyone else is already taken.</p>
+        <footer>Oscar Wilde</footer>
+      </blockquote>
+    </div>
 
+    
+ </div>
 <script src="jquery.js"></script>
 <script src="jquery.touchSwipe.js"></script>
 <script src="TweenMax.min.js"></script>
 <script>
 
+var palettes = [
+[
+'#5B7876',
+'#292929',
+'#F2E6B6',
+],
+[
+'#292929',
+'#8F9E8B',
+'#F2E6B6',
+],
+[
+'#412A22',
+'#F2E6B6',
+'#8F9E8B',
+],
+[
+'#8F9E8B',
+'#292929',
+'#F2E6B6',
+],
+[
+'#595241',
+'#B8AE9C',
+'#FFFFFF',
+],
+[
+'#B4AF91',
+'#32331D',
+'#787746',
+],
+[
+'#40411E',
+'#787746',
+'#B4AF91',
+],
+[
+'#787746',
+'#32331D',
+'#B4AF91',
+],
+[
+'#004358',
+'#FD7400',
+'#FFE11A',
+],
+[
+'#004358',
+'#1F8A70',
+'#BEDB39',
+],
+[
+'#363942',
+'#D8CAA8',
+'#5C832F',
+],
+[
+'#5C832F',
+'#363942',
+'#D8CAA8',
+],
+[
+'#382513',
+'#5C832F',
+'#D8CAA8',
+],
+[
+'#284907',
+'#5C832F',
+'#D8CAA8',
+],
+[
+'#FF9800',
+'#263248',
+'#FFFFFF',
+],
+[
+'#000000',
+'#7E8AA2',
+'#FFFFFF',
+],
+[
+'#263248',
+'#7E8AA2',
+'#FF9800',
+],
+[
+'#225378',
+'#EB7F00',
+'#F3FFE2',
+],
+[
+'#225378',
+'#1695A3',
+'#F3FFE2',
+],
+[
+'#1695A3',
+'#ACF0F2',
+'#F3FFE2',
+],
+[
+'#DB9E36',
+'#105B63',
+'#FFD34E',
+],
+[
+'#105B63',
+'#FFD34E',
+'#DB9E36',
+],
+[
+'#00A388', 
+'#FFFF9D',
+'#BEEB9F',
+],
+[
+'#DC3522',
+'#1E1E20',
+'#D9CB9E',
+],
+[
+'#BD8D46',
+'#4C1B1B',
+'#F6E497',
+],
+[
+'#4C1B1B',
+'#BD8D46',
+'#F6E497',
+],
+[
+'#B9121B',
+'#4C1B1B',
+'#F6E497',
+]
+];
 
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
+
+palettes = shuffleArray(palettes);
 
 var $nodes = $('.pt-page');
 
@@ -44,12 +198,16 @@ $nodes.each(function (index) {
   if (index == $nodes.length - 1) {
     $(this)[0].nextNode = $nodes.first();
   };
+
+  $(this).css('backgroundColor', palettes[index][0]);
+  $(this).find('blockquote').css('color', palettes[index][1]);
+  $(this).find('em').css('color', palettes[index][2]);
 });
 
 var $current = $nodes.first();
 
 if (Modernizr.touch) {
-  $("#pt-main").swipe({
+  $("#main").swipe({
     swipeLeft:function() {
       TweenLite.fromTo($current[0], .5, {left: 0}, {left: '-100%', ease: Power2.easeOut});
       TweenLite.fromTo($current[0].nextNode, .5, {left: '100%'}, {left: 0, ease: Power2.easeOut});
@@ -63,6 +221,40 @@ if (Modernizr.touch) {
     threshold: 10
   });
 }
+
+
+
+Array.prototype.randsplice = function(){
+    var ri = Math.floor(Math.random() * this.length);
+    var rs = this.splice(ri, 1);
+    return rs;
+}
+
+// https://kuler.adobe.com/
+
+var colors = [
+'#292929',
+'#5B7876',
+'#8F9E8B',
+'#F2E6B6',
+'#412A22',
+];
+
+return;
+
+for (var i = 0; i < 3; i++) {
+  var val = colors.randsplice();
+  if (i == 0) {
+    $('.pt-page-1').css('backgroundColor', val);
+  } else if (i == 1) {
+    $('.pt-page-1 blockquote').css('color', val);
+  } else if (i == 2) {
+    $('.pt-page-1 em').css('color', val);
+  }
+};
+
+
+
 </script>
 </body>
 </html>

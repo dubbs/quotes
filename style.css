@@ -11,6 +11,11 @@ html, body { height: 100%; padding: 0; margin: 0; }
   font-family: 'IM Fell DW Pica', serif;
   text-align: center;
 }
+.pt-page blockquote {
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto;
+  width: 70%;
+  height: 50%;
+}
 .pt-page p {
   margin: 0 0 1em 0;
   line-height: 7vmax;
@@ -26,13 +31,9 @@ html, body { height: 100%; padding: 0; margin: 0; }
 
 .pt-page-1 {
   background-color: #242021;
-  background-image: url('bgs/concrete_wall.png');
 }
 .pt-page-1 blockquote {
   color: #FD6E32;
-  position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto;
-  width: 70%;
-  height: 50%;
 }
 .pt-page-1 em {
   color: #F9ECD9;
@@ -44,14 +45,40 @@ html, body { height: 100%; padding: 0; margin: 0; }
 }
 .pt-page-2 blockquote {
   color: #F73445;
-  position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto;
-  width: 70%;
-  height: 50%;
 }
 .pt-page-2 em {
   color: #FCFAD7;
 }
 
+.pt-page-3 {
+  background-color: #5C2849;
+}
+.pt-page-3 blockquote {
+  color: #FF733F;
+}
+.pt-page-3 em {
+  color: #FFD285;
+}
+
+.pt-page-4 {
+  background-color: #002F2F;
+}
+.pt-page-4 blockquote {
+  color: #A7A37E;
+}
+.pt-page-4 em {
+  color: #EFECCA;
+}
+
+.pt-page-4 {
+  background-color: #002F2F;
+}
+.pt-page-4 blockquote {
+  color: #A7A37E;
+}
+.pt-page-4 em {
+  color: #EFECCA;
+}
 
 
 
